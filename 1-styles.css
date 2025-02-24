@@ -1,0 +1,25 @@
+h2 a {
+    all: unset;
+    color: red;
+    display: inline;
+    position: relative;
+    overflow: hidden;
+  }
+  h2 a:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: -5px;
+    background: red;
+    height: 4px;
+    transition-property: left right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+  h2 a:hover:after,
+  h2 a:focus:after,
+  h2 a:active:after {
+    right: 0;
+  }
