@@ -1,0 +1,60 @@
+.toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.toggle-label {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    background-color: #ddd;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.toggle-switch {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.toggle-label::before {
+    content: "No";
+    position: absolute;
+    top: 50%;
+    left: 55px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #aaa;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.toggle-cb {
+    display: none;
+}
+
+.toggle-cb:checked + .toggle-label {
+    background-color: #d0021b; /* Red if checked */
+}
+
+.toggle-cb:checked + .toggle-label .toggle-switch {
+    transform: translateX(50px);  
+}
+
+.toggle-cb:checked + .toggle-label::before {
+    content: "Yes";
+    color: white;
+    left: 25px;
+}
